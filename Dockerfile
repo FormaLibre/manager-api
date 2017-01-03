@@ -22,7 +22,9 @@ COPY ./api.conf /etc/apache2/sites-available/api.conf
 
 RUN a2dissite 000-default && a2ensite api.conf
 
-COPY ./php.ini /usr/local/etc/php/
+RUN a2enmod proxy && a2enmod proxy_http
+
+COPY ./php.ini /usr/local/etc/php/ 
 
 COPY entrypoint.sh /entrypoint.sh
 
