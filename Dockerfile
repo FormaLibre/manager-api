@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
   xz-utils \
   zlib1g-dev \
   libcurl4-gnutls-dev \
+  git \
   curl
 
 RUN docker-php-ext-install pdo pdo_mysql curl zip
