@@ -27,10 +27,4 @@ RUN a2enmod proxy && a2enmod proxy_http
 
 COPY ./php.ini /usr/local/etc/php/ 
 
-COPY entrypoint.sh /entrypoint.sh
-
-RUN chmod +x /entrypoint.sh
-
-ENTRYPOINT ["/entrypoint.sh"]
-
 CMD ["apache2-foreground"]
